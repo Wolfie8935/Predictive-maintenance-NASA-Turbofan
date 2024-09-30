@@ -48,7 +48,7 @@ After evaluating Approach 1 and Approach 2, the models were trained and tuned on
 ### 5. Training and Fine-Tuning
 We trained and fine-tuned each model on the training data, testing various hyperparameters to improve accuracy.
 
-### 6. Approach 2: Clipping the RUL
+### 6. Approach 2: Clipping the RUL to 125
 In Approach 2, we clipped the RUL values to a maximum threshold, focusing the model's prediction on engines close to failure. This improved the model's performance, particularly for engines nearing end-of-life.
 
 ## Results
