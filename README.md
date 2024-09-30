@@ -97,3 +97,13 @@ In Approach 2, we clipped the RUL values to improve the model's ability to predi
 ## Conclusion
 
 This project demonstrated the power of machine learning in **predictive maintenance** for NASA turbofan engines. We explored different models and approaches, achieving a significant improvement in accuracy with the second approach by clipping RUL values. Future work will continue to refine the models on additional datasets.
+
+
+
+## Contact
+
+If you have any questions, feedback, or are interested in collaborating on this project, feel free to reach out to the author via email at:
+
+**[wolfie8935@gmail.com]**
+
+I am open to further collaboration and welcome any ideas or contributions to enhance the predictive maintenance model or extend this work to new datasets like `FD002`, `FD003`, and `FD004`.
