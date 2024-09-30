@@ -53,17 +53,42 @@ In Approach 2, we clipped the RUL values to a maximum threshold, focusing the mo
 
 ## Results
 
-The highest accuracy was achieved using **Approach 2**:
+### Approach 1: Direct RUL Prediction
+The following models were evaluated using the `train_FD001.txt` dataset:
 
-| Model             | Accuracy (%) |
-|-------------------|--------------|
-| XGBoost           | 82%          |
-| Random Forest     | 81%          |
-| SVR               | 78%          |
+| Model             | Dataset    | RMSE  | R² Score  |
+|-------------------|------------|-------|-----------|
+| **Linear Regression** | Train      | 44.82 | 58.05%    |
+|                   | Test       | 44.29 | 57.06%    |
+|                   | Validation | 31.87 | 41.18%    |
+| **Decision Tree**  | Train      | 0.00  | 100.00%   |
+|                   | Test       | 60.07 | 21.03%    |
+|                   | Validation | 45.89 | -21.95%   |
+| **Random Forest**  | Train      | 15.77 | 94.80%    |
+|                   | Test       | 41.37 | 62.54%    |
+|                   | Validation | 31.83 | 41.34%    |
+| **SVR**           | Train      | 42.91 | 61.54%    |
+|                   | Test       | 42.25 | 60.93%    |
+|                   | Validation | 26.15 | 60.41%    |
+| **XGBoost**       | Train      | 40.50 | 65.75%    |
+|                   | Test       | 41.77 | 61.81%    |
+|                   | Validation | 29.79 | 48.60%    |
 
-In **Approach 1**, the maximum accuracy achieved was **60%**.
+### Approach 2: Clipping the RUL
 
-All results were evaluated on the **validation set provided by NASA**.
+In Approach 2, we clipped the RUL values to improve the model's ability to predict when engines were closer to failure.
+
+| Model             | Dataset    | RMSE  | R² Score  |
+|-------------------|------------|-------|-----------|
+| **Random Forest**  | Validation | 17.99 | 81.26%    |
+| **SVR**           | Validation | 19.63 | 77.69%    |
+| **XGBoost**       | Validation | 18.18 | 80.87%    |
+
+
+### Summary of Results
+- **Approach 1**: The highest accuracy in Approach 1 was obtained with **Random Forest** and **XGBoost**, with R² scores of around **41-48%** for the validation set.
+- **Approach 2 (Clipping)**: The performance significantly improved with **Random Forest** and **XGBoost**, achieving **81.26%** and **80.87%** R² scores on the validation set.
+
 
 ## Future Work
 - Extend the analysis to `_FD002.txt`, `_FD003.txt`, and `_FD004.txt` for further validation and testing.
